@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Story · Usuários</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="usuarios">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Second Story</div>
+      <div class="sidebar-mark">୨୧</div>
+      <nav class="nav">
+        <a class="nav-link" href="produtos.html"><span>▧</span> Produtos</a>
+        <a class="nav-link" href="producao.html"><span>⌁</span> Produção</a>
+        <a class="nav-link active" href="usuarios.html"><span>♧</span> Usuários</a>
+      </nav>
+      <button class="logout" data-logout><span>⇥</span> Sair</button>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">ACESSOS · EQUIPE</p>
+          <h1>Usuários <span class="ornament">⌁</span></h1>
+          <p class="page-subtitle">Cadastre e gerencie quem cuida da operação.</p>
+        </div>
+        <div class="user-chip"><span class="user-dot">♡</span><span data-user-name>Usuária</span></div>
+      </header>
+
+      <section class="users-layout">
+        <div class="content-card register-card">
+          <div class="section-title"><span>୨୧</span>
+            <div>
+              <h2 id="userFormTitle">Cadastrar usuário</h2>
+              <p>Crie um novo acesso ao sistema.</p>
+            </div>
+          </div>
+          <form id="userForm" class="form-stack">
+            <input type="hidden" id="userId">
+            <label for="userName">Nome</label>
+            <input id="userName" required maxlength="100" placeholder="Nome completo">
+            <label for="userEmail">E-mail</label>
+            <input id="userEmail" type="email" required maxlength="150" placeholder="email@exemplo.com">
+            <label for="userPassword">Senha</label>
+            <div class="password-wrap">
+              <input id="userPassword" type="password" required minlength="4" placeholder="Digite a senha">
+              <button type="button" class="password-toggle" data-target="userPassword">♡</button>
+            </div>
+            <p class="form-message" id="userMessage"></p>
+            <div class="button-row">
+              <button class="btn btn-dark" type="submit" id="userSubmit">Cadastrar usuário ୨୧</button>
+              <button class="btn btn-light hidden" type="button" id="cancelUserEdit">Cancelar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="content-card user-list-card">
+          <div class="toolbar compact">
+            <div>
+              <h2>Lista de usuários</h2>
+              <p class="table-caption">Contas cadastradas no sistema.</p>
+            </div>
+            <div class="search-box small"><span>⌕</span><input id="userSearch" type="search" placeholder="Buscar...">
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="usersTable"></tbody>
+            </table>
+            <div class="empty-state hidden" id="usersEmpty">Nenhum usuário encontrado ♡</div>
+          </div>
+        </div>
+      </section>
+      <p class="page-note">Detalhes não são apenas detalhes. Eles contam uma história. <span>୨୧</span></p>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

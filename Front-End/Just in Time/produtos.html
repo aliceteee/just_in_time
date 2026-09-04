@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Story · Produtos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="produtos">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Second Story</div>
+      <div class="sidebar-mark">୨୧</div>
+      <nav class="nav">
+        <a class="nav-link active" href="produtos.html"><span>▧</span> Produtos</a>
+        <a class="nav-link" href="producao.html"><span>⌁</span> Produção</a>
+        <a class="nav-link" href="usuarios.html"><span>♧</span> Usuários</a>
+      </nav>
+      <button class="logout" data-logout><span>⇥</span> Sair</button>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">INVENTÁRIO · MDF</p>
+          <h1>Produtos <span class="ornament">⌁</span></h1>
+          <p class="page-subtitle">Organize seu estoque com delicadeza e precisão.</p>
+        </div>
+        <div class="user-chip"><span class="user-dot">♡</span><span data-user-name>Usuária</span></div>
+      </header>
+
+      <section class="content-card">
+        <div class="toolbar">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="productSearch" type="search" placeholder="Buscar produto...">
+          </div>
+          <button class="btn btn-dark" id="newProductBtn">＋ Novo produto</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Estoque</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+          <div class="empty-state hidden" id="productsEmpty">Nenhum produto encontrado ♡</div>
+        </div>
+      </section>
+
+      <p class="page-note">Detalhes não são apenas detalhes. Eles contam uma história. <span>୨୧</span></p>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="productModal">
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal>×</button>
+      <p class="eyebrow" id="productModalEyebrow">NOVO ITEM</p>
+      <h2 id="productModalTitle">Cadastrar produto</h2>
+      <form id="productForm" class="form-stack">
+        <input type="hidden" id="productId">
+        <label for="productName">Nome</label>
+        <input id="productName" required maxlength="100" placeholder="Ex.: Caixa MDF Grande">
+        <label for="productDescription">Descrição</label>
+        <textarea id="productDescription" required maxlength="255" placeholder="Descreva o produto"></textarea>
+        <label for="productStock">Estoque inicial</label>
+        <input id="productStock" type="number" min="0" required value="0">
+        <p class="form-message" id="productMessage"></p>
+        <button class="btn btn-dark btn-full" type="submit">Salvar produto ୨୧</button>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

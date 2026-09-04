@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Story · Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page" data-page="login">
+  <main class="login-shell">
+    <section class="login-art">
+      <div class="brand-script">Second Story</div>
+      <div class="bow">୨୧</div>
+      <p class="art-quote">“every detail<br>tells a story.”</p>
+      <span class="floral floral-left">❀<br>⌁❀</span>
+    </section>
+
+    <section class="login-card">
+      <div class="login-inner">
+        <p class="eyebrow">SECOND STORY · JUST IN TIME</p>
+        <h1>Bem-vinda de volta <span>♡</span></h1>
+        <p class="subtitle">Faça login para continuar</p>
+
+        <form id="loginForm" class="form-stack">
+          <label for="loginEmail">E-mail</label>
+          <input id="loginEmail" name="email" type="email" placeholder="seu@email.com" autocomplete="email" required>
+
+          <label for="loginPassword">Senha</label>
+          <div class="password-wrap">
+            <input id="loginPassword" name="senha" type="password" placeholder="Digite sua senha"
+              autocomplete="current-password" required>
+            <button type="button" class="password-toggle" data-target="loginPassword"
+              aria-label="Mostrar senha">♡</button>
+          </div>
+
+          <button class="btn btn-dark btn-full" type="submit">Entrar</button>
+          <p class="form-message" id="loginMessage"></p>
+        </form>
+
+        <small class="copyright">SECOND STORY © 2026</small>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

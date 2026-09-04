@@ -1,0 +1,271 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-09-02T18:19:39.458Z",
+  "__export_source": "backend-aula",
+  "resources": [
+    {
+      "_id": "wrk_backend",
+      "_type": "workspace",
+      "name": "Backend Aula"
+    },
+    {
+      "_id": "fld_backend",
+      "_type": "request_group",
+      "parentId": "wrk_backend",
+      "name": "backend"
+    },
+    {
+      "_id": "fld_Usuario",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Usuario"
+    },
+    {
+      "_id": "req_Usuario_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/listar"
+    },
+    {
+      "_id": "req_Usuario_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/usuario/buscar/:id"
+    },
+    {
+      "_id": "req_Usuario_POST",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/usuario/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Usuario_PUT",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/usuario/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"email\": \"string\",\n  \"senha\": \"string\"\n}"
+      }
+    },
+    {
+      "_id": "req_Usuario_DELETE",
+      "_type": "request",
+      "parentId": "fld_Usuario",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/usuario/excluir/:id"
+    },
+    {
+      "_id": "fld_Produto",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Produto"
+    },
+    {
+      "_id": "req_Produto_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/listar"
+    },
+    {
+      "_id": "req_Produto_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/produto/buscar/:id"
+    },
+    {
+      "_id": "req_Produto_POST",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/produto/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"estoque\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Produto_PUT",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/produto/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"estoque\": 0\n}"
+      }
+    },
+    {
+      "_id": "req_Produto_DELETE",
+      "_type": "request",
+      "parentId": "fld_Produto",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/produto/excluir/:id"
+    },
+    {
+      "_id": "fld_Producao",
+      "_type": "request_group",
+      "parentId": "fld_backend",
+      "name": "Producao"
+    },
+    {
+      "_id": "req_Producao_GET_ALL",
+      "_type": "request",
+      "parentId": "fld_Producao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Listar",
+      "method": "GET",
+      "url": "http://localhost:3000/producao/listar"
+    },
+    {
+      "_id": "req_Producao_GET_ID",
+      "_type": "request",
+      "parentId": "fld_Producao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Buscar",
+      "method": "GET",
+      "url": "http://localhost:3000/producao/buscar/:id"
+    },
+    {
+      "_id": "req_Producao_POST",
+      "_type": "request",
+      "parentId": "fld_Producao",
+      "name": "Cadastrar",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "url": "http://localhost:3000/producao/cadastrar",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"produtoId\": 0,\n  \"usuarioId\": 0,\n  \"data\": \"2026-09-02T18:19:39.457Z\"\n}"
+      }
+    },
+    {
+      "_id": "req_Producao_PUT",
+      "_type": "request",
+      "parentId": "fld_Producao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/producao/atualizar/:id",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"produtoId\": 0,\n  \"usuarioId\": 0,\n  \"data\": \"2026-09-02T18:19:39.457Z\"\n}"
+      }
+    },
+    {
+      "_id": "req_Producao_DELETE",
+      "_type": "request",
+      "parentId": "fld_Producao",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "name": "Excluir",
+      "method": "DELETE",
+      "url": "http://localhost:3000/producao/excluir/:id"
+    }
+  ]
+}

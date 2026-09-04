@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Story · Produção</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Italianno&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="producao">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Second Story</div>
+      <div class="sidebar-mark">୨୧</div>
+      <nav class="nav">
+        <a class="nav-link" href="produtos.html"><span>▧</span> Produtos</a>
+        <a class="nav-link active" href="producao.html"><span>⌁</span> Produção</a>
+        <a class="nav-link" href="usuarios.html"><span>♧</span> Usuários</a>
+      </nav>
+      <button class="logout" data-logout><span>⇥</span> Sair</button>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">REGISTROS · MOVIMENTAÇÃO</p>
+          <h1>Produção <span class="ornament">⌁</span></h1>
+          <p class="page-subtitle">Registre cada movimento do seu estoque.</p>
+        </div>
+        <div class="user-chip"><span class="user-dot">♡</span><span data-user-name>Usuária</span></div>
+      </header>
+
+      <section class="production-layout">
+        <div class="content-card movement-card">
+          <div class="section-title"><span>୨୧</span>
+            <div>
+              <h2>Nova movimentação</h2>
+              <p>Preencha os detalhes abaixo.</p>
+            </div>
+          </div>
+          <form id="productionForm" class="form-stack">
+            <label for="productionProduct">Produto</label>
+            <select id="productionProduct" required>
+              <option value="">Selecione um produto</option>
+            </select>
+
+            <div class="form-grid">
+              <div>
+                <label for="productionType">Tipo</label>
+                <select id="productionType" required>
+                  <option value="fabricado">Fabricado (entrada)</option>
+                  <option value="pedido">Pedido (saída)</option>
+                </select>
+              </div>
+              <div>
+                <label for="productionDate">Data</label>
+                <input id="productionDate" type="datetime-local" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label for="productionQuantity">Quantidade</label>
+                <input id="productionQuantity" type="number" min="1" value="1" required>
+              </div>
+              <div class="stock-preview">
+                <span>Estoque atual</span>
+                <strong id="productionStockPreview">—</strong>
+              </div>
+            </div>
+
+            <div class="notice">
+              <strong>♡ Atenção</strong>
+              <span>O backend atual registra apenas produto, usuário e data em <code>Producao</code>. Tipo e quantidade
+                ficam preparados na interface, mas precisam ser adicionados ao Prisma para alterar estoque
+                automaticamente.</span>
+            </div>
+            <p class="form-message" id="productionMessage"></p>
+            <button class="btn btn-dark btn-full" type="submit">Registrar movimentação ୨୧</button>
+          </form>
+        </div>
+
+        <div class="content-card production-info">
+          <p class="eyebrow">JUST IN TIME</p>
+          <h2>Estoque sob cuidado</h2>
+          <p>Uma visão limpa para acompanhar entradas, pedidos e o ritmo da produção.</p>
+          <div class="mini-stat"><span>Produtos cadastrados</span><strong id="productionProductCount">0</strong></div>
+          <div class="mini-stat"><span>Movimentações</span><strong id="productionCount">0</strong></div>
+          <div class="line-illustration">⌁ ୨୧ ⌁</div>
+        </div>
+      </section>
+
+      <section class="content-card history-card">
+        <div class="section-title inline-title">
+          <div>
+            <h2>Histórico de movimentações</h2>
+            <p>Os registros mais recentes aparecem primeiro.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Usuário</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="productionTable"></tbody>
+          </table>
+          <div class="empty-state hidden" id="productionEmpty">Nenhuma movimentação registrada ainda ♡</div>
+        </div>
+      </section>
+      <p class="page-note">Detalhes não são apenas detalhes. Eles contam uma história. <span>୨୧</span></p>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
